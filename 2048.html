@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript" src="http://l2.io/ip.js?var=userip"></script>
+<script language="Javascript">
+function preloadFunc()
+{
+var ip = userip;
+var bannedips=[
+ "142.105.36.242", 
+]
+var handleips=bannedips.join("|")
+handleips=new RegExp(handleips, "i")
+
+if (ip.search(handleips)!=-1){ 
+window.location.replace("http://google.com");
+document.write('<!--');
+}
+}
+window.onpaint = preloadFunc();
+</script>
+	
   <meta charset="utf-8">
   <title>KatzNetwork</title>
 							
